@@ -1,0 +1,15 @@
+FROM ubuntu:18.10
+
+RUN echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic main multiverse restricted universe' > /etc/apt/sources.list && \
+    echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic-backports main multiverse restricted universe' >> /etc/apt/sources.list && \
+    echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic-proposed main multiverse restricted universe' >> /etc/apt/sources.list && \
+    echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic-security main multiverse restricted universe' >> /etc/apt/sources.list && \
+    echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic-updates main multiverse restricted universe' >> /etc/apt/sources.list
+
+RUN apt-get update && \
+    apt-get install -y openssh-client && \
+    apt-get clean
+
+WORKDIR /data
+
+CMD ["tail", "-f", "/dev/null"]

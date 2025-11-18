@@ -1,0 +1,55 @@
+version: '1.0'
+
+services:
+  ubuntu16:
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile.ubuntu16.10
+    container_name: c1
+    volumes:
+      - ./data:/data
+    ports:
+      - "2216:22"
+    networks:
+      - ssh-network
+
+  ubuntu18:
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile.ubuntu18.10
+    container_name: c2
+    volumes:
+      - ./data:/data
+    ports:
+      - "2218:22"
+    networks:
+      - ssh-network
+
+  ubuntu20:
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile.ubuntu20.10
+    container_name: c3
+    volumes:
+      - ./data:/data
+    ports:
+      - "2220:22"
+    networks:
+      - ssh-network
+
+  ubuntu22:
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile.ubuntu22.10
+    container_name: c4
+    volumes:
+      - ./data:/data
+    ports:
+      - "2222:22"
+    networks:
+      - ssh-network
+
+
+networks:
+  ssh-network:
+    driver: bridge
